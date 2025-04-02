@@ -1441,6 +1441,8 @@ textarea.form-input::-webkit-resizer {
     top: -30px;
     right: -30px;
     padding: 10px 15px;
+    display: flex;
+    gap: 9px;
   }
 
   .info_more-btn span {
@@ -2106,16 +2108,28 @@ textarea.form-input::-webkit-resizer {
   font-size: 14px;
 }
 
-
 .service-icon-box {
   display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 50px;
-      height: 50px;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
 }
 
 .service-icon-box i {
   font-size: 27px;
-    color: rgb(255 255 255);
+  color: rgb(255 255 255);
+}
+
+@media (max-width: 767px) {
+  .article-title::after {
+    bottom: 2px !important;
+  }
+  .sidebar {
+    margin-bottom: 15px;
+    max-height: 130px;
+  }
+  .service-icon-box {
+    width: 100%;
+  }
 }
