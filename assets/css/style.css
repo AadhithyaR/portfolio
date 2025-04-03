@@ -2131,4 +2131,7 @@ textarea.form-input::-webkit-resizer {
   .service-icon-box {
     width: 100%;
   }
+  .progress-ring {
+    width: 134px !important;
+  }
 }
