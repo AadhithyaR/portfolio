@@ -2126,12 +2126,105 @@ textarea.form-input::-webkit-resizer {
   }
   .sidebar {
     margin-bottom: 15px;
-    max-height: 130px;
+    max-height: 171px;
   }
   .service-icon-box {
     width: 100%;
   }
   .progress-ring {
     width: 134px !important;
+  }
+}
+.download-cv-container {
+  text-align: end;
+  margin-top: -26px;
+}
+
+.an-button {
+  --background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  --shadow: rgba(0, 0, 0, 0%);
+  --text: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-decoration: none;
+  background: var(--background);
+  border: 1px solid rgba(209, 213, 219, 0.2);
+  border-radius: 3px;
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 500;
+  padding: 14px 40px;
+  box-shadow: 0 4px 15px var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Shimmer effect */
+.an-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.an-button:hover {
+  transform: translateY(-2px);
+}
+
+.an-button:active {
+  transform: scale(0.97);
+}
+
+/* Button wrapper alignment */
+.resume-download-section {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -26px;
+  margin-bottom: 18px;
+}
+
+.resume-button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .an-button {
+    font-size: 14px;
+    padding: 10px 28px;
+  }
+
+  .resume-download-section {
+    justify-content: end;
+  }
+}
+
+@media (max-width: 480px) {
+  .an-button {
+    font-size: 13px;
+    padding: 8px 24px;
   }
 }
