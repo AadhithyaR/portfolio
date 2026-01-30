@@ -362,6 +362,7 @@ main {
   /* width: max-content; */
   padding: 3px 12px;
   border-radius: 8px;
+  text-align: center;
 }
 
 .info_more-btn {
@@ -1426,7 +1427,11 @@ textarea.form-input::-webkit-resizer {
   }
 
   .avatar-box img {
-    width: 120px;
+    /* width: 120px; */
+            height: 175px;
+        width: 150px;
+        object-fit: cover;
+        object-position: 20% 16%;
   }
 
   .info-content .name {
