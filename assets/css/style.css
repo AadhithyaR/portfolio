@@ -2233,3 +2233,10 @@ textarea.form-input::-webkit-resizer {
     padding: 8px 24px;
   }
 }
+
+@media (min-width: 580px) and (max-width: 1249px) {
+  .sidebar {
+        max-height: 237px;
+        margin-bottom: 30px;
+    }
+}

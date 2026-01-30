@@ -248,7 +248,7 @@
               <div class="progress-label">Client Projects</div>
             </div>
 
-             <div class="progress-item">
+            <div class="progress-item">
               <div class="progress-ring">
                 <svg width="120" height="120">
                   <circle cx="60" cy="60" r="50" class="progress-bg" />
@@ -848,8 +848,9 @@
               <button data-filter-btn>E-Commerce</button>
             </li>
 
-
-
+            <li class="filter-item">
+              <button data-filter-btn>UI/UX</button>
+            </li>
 
             <li class="filter-item">
               <button data-filter-btn>UI Development</button>
@@ -880,7 +881,9 @@
               </li>
 
 
-
+              <li class="select-item">
+                <button data-select-item>UI/UX Design</button>
+              </li>
 
               <li class="select-item">
                 <button data-select-item>UI Development</button>
@@ -891,6 +894,26 @@
           </div>
 
           <ul class="project-list">
+
+            <li class="project-item  active" data-filter-item data-category="uiux">
+              <a href="https://www.behance.net/aadhithyarajan" target="_blank">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <i class="fa-regular fa-eye"></i>
+                  </div>
+
+                  <img src="./assets/images/behance.png" alt="Behance loading=" lazy">
+                </figure>
+
+                <h3 class="project-title">UI/UX Design Projects</h3>
+
+                <!-- <p class="project-category">HTML, CSS, JS, Bootstrap</p> -->
+                <p class="project-category">View Behance</p>
+
+              </a>
+            </li>
+
 
             <li class="project-item  active" data-filter-item data-category="e-commerce">
               <a href="https://nouk.in/" target="_blank">
@@ -929,6 +952,8 @@
 
               </a>
             </li>
+
+
 
             <li class="project-item  active" data-filter-item data-category="ui development">
               <a href="https://demo.gingertechnologies.app/GO_N_GLOW/" target="_blank">
@@ -1286,6 +1311,55 @@
         }
       });
     });
+
+  </script>
+
+  <script>
+    const filterButtons = document.querySelectorAll("[data-filter-btn]");
+    const projectItems = document.querySelectorAll("[data-filter-item]");
+
+    // ✅ Correct Category Mapping
+    const categoryMap = {
+      "All": "all",
+      "E-Commerce": "ecommerce",
+      "UI/UX": "uiux",
+      "UI Development": "uidev"
+    };
+
+    // ✅ Filter Function
+    function filterProjects(selectedCategory) {
+      projectItems.forEach(item => {
+        const itemCategory = item.dataset.category;
+
+        if (selectedCategory === "all" || itemCategory === selectedCategory) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    }
+
+    // ✅ Button Click Events
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+
+        // Remove active class
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+
+        // Add active class
+        button.classList.add("active");
+
+        // Button text
+        const buttonText = button.textContent.trim();
+
+        // Mapped category
+        const selectedCategory = categoryMap[buttonText];
+
+        // Run filter
+        filterProjects(selectedCategory);
+      });
+    });
+
 
   </script>
 
